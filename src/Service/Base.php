@@ -52,14 +52,14 @@ class Base
 
     protected function __construct($options)
     {
-        if (empty($options['redis_options']['appid'])) {
+        if (empty($options['wechat_options']['appid'])) {
             throw new \Exception('缺少appid参数');
         }
-        if (empty($options['redis_options']['appsecret'])) {
+        if (empty($options['wechat_options']['appsecret'])) {
             throw new \Exception('缺少appsecret参数');
         }
-        $this->appid = $options['redis_options']['appid'];
-        $this->appsecret = $options['redis_options']['appsecret'];
+        $this->appid = $options['wechat_options']['appid'];
+        $this->appsecret = $options['wechat_options']['appsecret'];
         $this->redis = Redis::getInstance($options['redis_options'] ?? []);
     }
 
