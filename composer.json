@@ -1,0 +1,23 @@
+{
+    "name": "weihaozhu/wechat-central-control-service",
+    "description": "微信中控服务，主要用于统一管理微信access_token和jsapiticket",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "weihaozhu",
+            "email": "471567032@qq.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.1",
+        "ext-curl": "*",
+        "ext-json": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Wccs\\": "src"
+        }
+    }
+}
