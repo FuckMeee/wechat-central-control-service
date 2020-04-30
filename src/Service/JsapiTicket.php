@@ -9,12 +9,15 @@
 namespace Wccs\Service;
 
 
+use Wccs\Center;
+
 class JsapiTicket extends Base
 {
     public function __construct($options)
     {
         parent::__construct($options);
-        $this->url = "https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token=[access_token]&type=jsapi";
+        $access_token = Center::accessToken($options)->get();
+        $this->url = "https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token={$access_token}&type=jsapi";
     }
 
     public function get()

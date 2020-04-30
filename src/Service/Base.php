@@ -50,7 +50,7 @@ class Base
      */
     protected $appsecret;
 
-    public function __construct($options)
+    protected function __construct($options)
     {
         if (empty($options['redis_options']['appid'])) {
             throw new \Exception('缺少appid参数');
@@ -81,7 +81,7 @@ class Base
      * @param array $options
      * @return array|mixed
      */
-    public function callGetApi($data = [], $options = [])
+    protected function callGetApi($data = [], $options = [])
     {
         $this->registerApi(__FUNCTION__, func_get_args());
         return $this->httpGet($data, $options);
